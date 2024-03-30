@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: repeat(4, 100px);
+            gap: 10px;
+            border: 2px solid #ccc;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        .btn {
+            background-color: #a0a0a0;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn.clicked {
+            /* 浅绿色 */
+            background-color: #70ba70;
+            /* background-color: #cf7070;  */
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="btn0" class="btn" onclick="toggleButton(this, 0)">0</div>
+        <div id="btn1" class="btn" onclick="toggleButton(this, 1)">1</div>
+        <div id="btn2" class="btn" onclick="toggleButton(this, 2)">2</div>
+        <div id="btn3" class="btn" onclick="toggleButton(this, 3)">3</div>
+        <div id="btn4" class="btn" onclick="toggleButton(this, 4)">4</div>
+        <div id="btn5" class="btn" onclick="toggleButton(this, 5)">5</div>
+        <div id="btn6" class="btn" onclick="toggleButton(this, 6)">6</div>
+        <div id="btn7" class="btn" onclick="toggleButton(this, 7)">7</div>
+        <div id="btn8" class="btn" onclick="toggleButton(this, 8)">8</div>
+        <div id="btn9" class="btn" onclick="toggleButton(this, 9)">9</div>
+        <div id="btn10" class="btn" onclick="toggleButton(this, 10)">10</div>
+        <div id="btn11" class="btn" onclick="toggleButton(this, 11)">11</div>
+        <div id="btn12" class="btn" onclick="toggleButton(this, 12)">12</div>
+        <div id="btn13" class="btn" onclick="toggleButton(this, 13)">13</div>
+        <div id="btn14" class="btn" onclick="toggleButton(this, 14)">14</div>
+        <div id="btn15" class="btn" onclick="toggleButton(this, 15)">15</div>
+    </div>
+    <div id="result" style="margin-top: 20px;"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script>
+        var AES = CryptoJS.AES;
+        async function readJsonFromFile(filename) {
+            try {
+                const response = await fetch(filename);
+                const jsonData = await response.json();
+                return jsonData;
+            } catch (error) {
+                console.error('Error reading JSON from file:', error);
+                return null;
+            }
+        }
+
+        function decryptData(data, keyHex) {
+            const key = CryptoJS.enc.Hex.parse(keyHex);
+            const iv = CryptoJS.enc.Hex.parse(data.slice(0, 32));
+            const ciphertext = CryptoJS.enc.Hex.parse(data.slice(32));
+            console.log(keyHex);
+            console.log(ciphertext.toString());
+            console.log(iv.toString());
+            const decrypted = CryptoJS.AES.decrypt({ ciphertext }, key, {
+                iv: iv,
+                mode: CryptoJS.mode.CBC,
+                padding: CryptoJS.pad.Pkcs7
+            });
+            return decrypted.toString(CryptoJS.enc.Utf8);
+        }
+
+
+        let currentSequence = [];
+        let answer = {}
+        let unusedColors = [
+            "#70ba70", // 绿色
+            "#803080", // 紫色
+            "#afaf00", // 黄色
+            "#cf7070", // 红色
+        ]
+        
+        function lockButton(button) {
+            button.classList.add('clicked');
+            button.onclick = null;
+        }
+
+        function lockCurrentSequence() {
+            let buttons = document.getElementsByClassName('btn');
+            let selectedButtons = [];
+            let color = unusedColors.pop();
+            for (let i = 0; i < buttons.length; i++) {
+                console.log(buttons[i].innerText);
+                console.log(currentSequence);
+                if (currentSequence.includes(buttons[i].innerText)) {
+                    lockButton(buttons[i]);
+                    buttons[i].style.backgroundColor = color;
+                    selectedButtons.push(buttons[i].innerText);
+                }
+            }
+            currentSequence = [];
+        }
+
+        function toggleButton(button, buttonNumber) {
+            button.classList.toggle('clicked');
+            let word = button.innerText;
+            if (button.classList.contains('clicked')) {
+                currentSequence.push(word);
+            } else {
+                currentSequence = currentSequence.filter(item => item !== word);
+            }
+            // 给currentSequence排序
+            currentSequence.sort();
+            console.log(currentSequence);
+            // 将currentSequence转换为字符串，用空格分隔
+            let result = currentSequence.join(' ');
+            let hash = CryptoJS.MD5(result).toString();
+            if (hash in answer) {
+                let ciphertext = answer[hash];
+                let key = CryptoJS.MD5(result + 'salt');
+                console.log(key.toString(), typeof key);
+                ans = decryptData(ciphertext, key.toString());
+                console.log(ans);
+                let paragraph = document.createElement('p');
+                paragraph.textContent = currentSequence.join(', ')+' :   '+ans;
+                document.getElementById('result').appendChild(paragraph);
+                lockCurrentSequence();
+            }
+            if(unusedColors.length == 0){
+                setTimeout(() => {
+                    alert('Congratulations! You have finished the game!');
+                }, 100);
+            }
+        }
+        function init() {
+            let date = new Date();
+            let dateString = date.toISOString().split('T')[0];
+            console.log(dateString);
+            readJsonFromFile('./data/' + dateString + '.json').then(data => {
+                if (data) {
+                    console.log(data);
+                    let words = data.words;
+                    for (let i = 0; i < words.length; i++) {
+                        // 转为utf-8编码
+                        document.getElementById('btn' + i).innerText = words[i];
+                    }
+                    let answers = data.answers;
+                    for (let i = 0; i < answers.length; i++) {
+                        let ans_pair = answers[i]
+                        answer[ans_pair['md5']] = ans_pair['answer'];
+                    }
+                    console.log(answer);
+                }
+            });
+        }
+        init();
+    </script>
+</body>
+
+</html>
