@@ -5,180 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connections!</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
+    <link rel="stylesheet" type="text/css" href="./index.css">
 
-        .container {
-            display: grid;
-            grid-template-columns: repeat(4, 100px);
-            grid-template-rows: repeat(4, 100px);
-            gap: 10px;
-            border: 2px solid #ccc;
-            padding: 10px;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn {
-            background-color: #a0a0a0;
-            color: white;
-            font-size: 18px;
-            text-align: center;
-            line-height: 100px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            border-radius: 10px;
-        }
-
-        .btn:hover {
-            background-color: #6b6b6b;
-        }
-
-        .btn.clicked {
-            background-color: #70ba70;
-        }
-
-        .sidebar {
-            width: 200px;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #333;
-            padding: 20px;
-            color: #fff;
-            overflow-y: auto;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            transition: width 0.3s ease;
-            /* 添加过渡效果 */
-        }
-
-        .sidebar h2 {
-            margin-top: 0;
-            font-size: 20px;
-            color: #fff;
-        }
-
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            /* 去除默认的外边距 */
-        }
-
-        .sidebar ul li {
-            margin-bottom: 10px;
-            position: relative;
-            /* 添加相对定位，用于图标位置 */
-        }
-
-        .sidebar ul li a {
-            display: block;
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            position: relative;
-            /* 添加相对定位，用于图标位置 */
-        }
-
-        .sidebar ul a.month::before {
-            content: '>';
-            /* Unicode 箭头符号，表示展开状态 */
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            transition: transform 0.3s ease;
-        }
-
-        .sidebar ul li ul {
-            list-style-type: none;
-            padding-left: 20px;
-            display: none;
-            background-color: #444;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            /* 添加阴影效果 */
-        }
-
-        .sidebar ul li.active ul {
-            display: block;
-        }
-
-        .sidebar ul li.active a.month::before {
-            content: '>';
-            /* Unicode 箭头符号，表示折叠状态 */
-            transform: translateY(-50%) rotate(90deg);
-            /* 旋转箭头 */
-        }
-
-        .sidebar ul li a:hover {
-            color: #ffd700;
-        }
-
-        .sidebar ul li ul li {
-            margin-bottom: 8px;
-            /* 减少子菜单项间距 */
-        }
-
-        .sidebar ul li ul li a {
-            color: #ccc;
-        }
-
-        .sidebar ul li ul li a:hover {
-            color: #ffd700;
-        }
-
-        
-        #result {
-            margin-top: 20px;
-            font-size: 18px;
-            text-align: center;
-            color: #333;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
+        <button class="sidebar-toggle" onclick="toggleSidebar()" >☰</button>
         <h2>选择日期:</h2>
         <ul id="dateList">
             <!-- 日期链接将由 JavaScript 动态生成 -->
         </ul>
     </div>
 
-    <h1>Connections!</h1>
+    <h1 id="head">Connections!</h1>
     <div class="container">
-        <div id="btn0" class="btn" onclick="toggleButton(this, 0)">0</div>
-        <div id="btn1" class="btn" onclick="toggleButton(this, 1)">1</div>
-        <div id="btn2" class="btn" onclick="toggleButton(this, 2)">2</div>
-        <div id="btn3" class="btn" onclick="toggleButton(this, 3)">3</div>
-        <div id="btn4" class="btn" onclick="toggleButton(this, 4)">4</div>
-        <div id="btn5" class="btn" onclick="toggleButton(this, 5)">5</div>
-        <div id="btn6" class="btn" onclick="toggleButton(this, 6)">6</div>
-        <div id="btn7" class="btn" onclick="toggleButton(this, 7)">7</div>
-        <div id="btn8" class="btn" onclick="toggleButton(this, 8)">8</div>
-        <div id="btn9" class="btn" onclick="toggleButton(this, 9)">9</div>
-        <div id="btn10" class="btn" onclick="toggleButton(this, 10)">10</div>
-        <div id="btn11" class="btn" onclick="toggleButton(this, 11)">11</div>
-        <div id="btn12" class="btn" onclick="toggleButton(this, 12)">12</div>
-        <div id="btn13" class="btn" onclick="toggleButton(this, 13)">13</div>
-        <div id="btn14" class="btn" onclick="toggleButton(this, 14)">14</div>
-        <div id="btn15" class="btn" onclick="toggleButton(this, 15)">15</div>
+        <div id="btn0" class="btn" onclick="toggleButton(this, 0)"></div>
+        <div id="btn1" class="btn" onclick="toggleButton(this, 1)"></div>
+        <div id="btn2" class="btn" onclick="toggleButton(this, 2)"></div>
+        <div id="btn3" class="btn" onclick="toggleButton(this, 3)"></div>
+        <div id="btn4" class="btn" onclick="toggleButton(this, 4)"></div>
+        <div id="btn5" class="btn" onclick="toggleButton(this, 5)"></div>
+        <div id="btn6" class="btn" onclick="toggleButton(this, 6)"></div>
+        <div id="btn7" class="btn" onclick="toggleButton(this, 7)"></div>
+        <div id="btn8" class="btn" onclick="toggleButton(this, 8)"></div>
+        <div id="btn9" class="btn" onclick="toggleButton(this, 9)"></div>
+        <div id="btn10" class="btn" onclick="toggleButton(this, 10)"></div>
+        <div id="btn11" class="btn" onclick="toggleButton(this, 11)"></div>
+        <div id="btn12" class="btn" onclick="toggleButton(this, 12)"></div>
+        <div id="btn13" class="btn" onclick="toggleButton(this, 13)"></div>
+        <div id="btn14" class="btn" onclick="toggleButton(this, 14)"></div>
+        <div id="btn15" class="btn" onclick="toggleButton(this, 15)"></div>
     </div>
     <div id="result" style="margin-top: 20px;"></div>
+    <div class="rule-description">
+        <p>
+            <strong>Connections规则介绍：</strong> 你需要将给出的16个词，或是符号，或是别的什么(?)分成四组，
+            每组四个单次，且组与组之间具有一定的联系。这个联系总是比"它们都是动词"强。
+            例（实际的connection往往会更加隐蔽）：
+        </p>
+        <ol>
+            <li>苹果    香蕉    橘子    李子    <span>:都是水果</span></li>
+            <li>鸡      极      几      既      <span>:都读ji</span></li>
+            <li>箭      苗      车站    烧眉毛  <span>:都可以与火组成‘火x’的词</span></li>
+        </ol>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
     <script src="./index.js"> </script>

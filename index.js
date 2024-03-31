@@ -10,7 +10,7 @@ async function readJsonFile(filename) {
     }
 }
 
-let fileCache = {};
+let fileCache = {}; // 缓存数据文件
 
 function processData(data) {
     if (data) {
@@ -35,7 +35,7 @@ function loadJsonFile(filename) {
     if (filename in fileCache) {
         processData(fileCache[filename]);
     } else {
-        readJsonFile('./data/'+filename).then(data => {
+        readJsonFile('./data/' + filename).then(data => {
             processData(data);
         });
     }
@@ -59,7 +59,7 @@ function decryptData(data, keyHex) {
 
 let currentSequence = [];
 let answer = {}
-let unusedColors = [
+let unusedColors = [    // 正确答案的颜色
     "#70ba70",
     "#803080",
     "#afaf00",
@@ -84,9 +84,9 @@ function lockCurrentSequence() {
 
 function checkWin() {
     if (unusedColors.length == 0) {
-        setTimeout(() => {
-            alert('Congratulations! You have finished the game!');
-        }, 100);
+        const header = document.getElementById('head');
+        header.textContent = 'Congratulations!';
+        header.style.color = "#df4040";
     }
 }
 
@@ -110,7 +110,7 @@ function checkAnswer() {
     return false;
 }
 
-function toggleButton(button, buttonNumber) {
+function toggleButton(button, buttonNumber) { // 选择单词
     button.classList.toggle('clicked');
     let word = button.innerText;
     if (button.classList.contains('clicked')) {
@@ -118,31 +118,70 @@ function toggleButton(button, buttonNumber) {
     } else {
         currentSequence = currentSequence.filter(item => item !== word);
     }
-    if (checkAnswer()) {
-        lockCurrentSequence();
-        currentSequence = [];
+    if (currentSequence.length >= 4) {
+        if (checkAnswer()) {
+            lockCurrentSequence();
+            currentSequence = [];
+            checkWin();
+        } else {
+
+            currentSequence = [];
+            // 将选中的按钮立即变成红色
+            let buttons = document.getElementsByClassName('btn');
+            for (let i = 0; i < buttons.length; i++) {
+                if (buttons[i].classList.contains('clicked')) {
+                    buttons[i].classList.remove('clicked');
+                    buttons[i].classList.add('wrong');
+                }
+            }
+
+            // 渐变回未选中的颜色
+            setTimeout(() => {
+                for (let i = 0; i < buttons.length; i++) {
+                    buttons[i].classList.remove('wrong');
+                }
+            }, 500); // 渐变时间，单位毫秒
+        }
     }
-    checkWin();
 }
 
-function updateSideBar() {
+function updateSideBar() { // 动态生成日期链接
     document.addEventListener('DOMContentLoaded', function () {
-        const currentDate = new Date();
-        const currentYear = currentDate.getFullYear();
-        const currentMonth = currentDate.getMonth() + 1;
-        const currentDay = currentDate.getDate();
-    
-        // 获取每个月的天数
-        function getDaysInMonth(year, month) {
-            return new Date(year, month, 0).getDate();
-        }
-    
+        // Ajax 请求获取文件名列表
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', './data/', true);
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                const fileList = xhr.responseText.split('\"').filter(name => name.endsWith('.json'));
+                generateDateLinks(fileList);
+            } else {
+                console.error('Failed to fetch file list');
+            }
+        };
+        xhr.send();
+    });
+    function generateDateLinks(fileList) {
+
+        const allDate = fileList.map(name => name.slice(0, 10));
+        const allYearMonth = allDate.map(date => date.slice(0, 7));
+        const allDay = allDate.map(date => date.slice(8));
+
         // 动态生成日期链接
         const dateList = document.getElementById('dateList');
-        for (let year = currentYear; year >= 2024; year--) {
-            for (let month = (year === currentYear ? currentMonth : 12); month >= 1; month--) {
-                const numDays = year===currentYear && month===currentMonth ? currentDay : getDaysInMonth(year, month);
-                const yearMonth = year + '-' + (month < 10 ? '0' + month : month);
+
+        let yearMonthToDays = {};
+
+        for (let i = 0; i < allYearMonth.length; i++) {
+            const yearMonth = allYearMonth[i];
+            const day = allDay[i];
+            // 如果日期超过当前日期，则跳过
+            const currentDate = new Date();
+            const thatDate = new Date(yearMonth + '-' + day);
+            thatDate.setHours(0, 0, 0, 0);
+            if (thatDate > currentDate) {
+                continue;
+            }
+            if (!(yearMonth in yearMonthToDays)) {
                 const monthItem = document.createElement('li');
                 const monthLink = document.createElement('a');
                 monthLink.classList.add('month');
@@ -151,26 +190,26 @@ function updateSideBar() {
                 monthLink.setAttribute('data-year-month', yearMonth); // 添加自定义属性
                 monthItem.appendChild(monthLink);
                 dateList.appendChild(monthItem);
-                
-                // 添加月份下的日期链接，初始状态为隐藏
                 const dayList = document.createElement('ul');
                 dayList.setAttribute('id', `days_${yearMonth}`);
                 monthItem.appendChild(dayList);
-                
-                // 生成每天的链接
-                for (let day = numDays; day >= 1; day--) {
-                    const dayItem = document.createElement('li');
-                    const dayLink = document.createElement('a');
-                    dayLink.classList.add('day');
-                    dayLink.textContent = `${yearMonth}-${day}`;
-                    dayLink.setAttribute('href', '#');
-                    dayLink.setAttribute('data-year-month-day', `${yearMonth}-${day}`); // 添加自定义属性
-                    dayItem.appendChild(dayLink);
-                    dayList.appendChild(dayItem);
-                }
+                yearMonthToDays[yearMonth] = dayList;
             }
+            // 添加月份下的日期链接，初始状态为隐藏
+            const dayList = yearMonthToDays[yearMonth];
+
+            // 生成每天的链接
+            const dayItem = document.createElement('li');
+            const dayLink = document.createElement('a');
+            dayLink.classList.add('day');
+            dayLink.textContent = `${yearMonth}-${day}`;
+            dayLink.setAttribute('href', '#');
+            dayLink.setAttribute('id', `${yearMonth}-${day}`);
+            dayLink.setAttribute('data-year-month-day', `${yearMonth}-${day}`); // 添加自定义属性
+            dayItem.appendChild(dayLink);
+            dayList.appendChild(dayItem);
         }
-    
+
         // 添加事件监听器，实现月份的展开与折叠
         const monthLinks = document.querySelectorAll('#dateList a[data-year-month]');
         monthLinks.forEach(function (link) {
@@ -179,14 +218,14 @@ function updateSideBar() {
                 const clickedYearMonth = this.getAttribute('data-year-month');
                 const clickedSubMenu = document.getElementById(`days_${clickedYearMonth}`);
                 const allSubMenus = document.querySelectorAll('#dateList ul');
-    
+
                 allSubMenus.forEach(function (menu) {
                     if (menu !== clickedSubMenu) {
                         menu.style.display = 'none';
                         menu.parentNode.classList.remove('active');
                     }
                 });
-    
+
                 if (clickedSubMenu.style.display === 'block') {
                     clickedSubMenu.style.display = 'none';
                     this.parentNode.classList.remove('active');
@@ -196,28 +235,42 @@ function updateSideBar() {
                 }
             });
         });
-    
+
         // 添加事件监听器，加载 JSON 文件
         const dayLinks = document.querySelectorAll('#dateList a[data-year-month-day]');
         dayLinks.forEach(function (link) {
             link.addEventListener('click', function (event) {
                 event.preventDefault();
                 const yearMonthDay = this.getAttribute('data-year-month-day');
-                loadJsonFile(yearMonthDay + '.json');
+                localStorage.setItem('selectedDate', yearMonthDay);
+                window.location.reload(); // 刷新页面
             });
         });
-    });
+    };
     // 控制月份下的日期链接显示与隐藏
 }
 
+function toggleSidebar() {  // 控制侧边栏的显示与隐藏
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('collapsed');
+}
+
+function loadJsonFileForDate(date) {
+    const yearMonthDay = date;
+    loadJsonFile(yearMonthDay + '.json');
+}
 
 function init() {
+    sidebar.classList.toggle('collapsed');
     updateSideBar();
-
-    let date = new Date();
-    let dateString = date.toISOString().split('T')[0];
-    console.log(dateString);
-    loadJsonFile(dateString + '.json');
+    let selectedDate = localStorage.getItem('selectedDate'); // 获取保存的日期信息
+    if (!selectedDate) {
+        let date = new Date();
+        console.log(date);
+        selectedDate = date.toLocaleDateString.split('T')[0];
+    }
+    loadJsonFileForDate(selectedDate); // 加载保存的日期对应的 JSON 文件
 }
 
 init();
+
