@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button Grid</title>
+    <title>Connections!</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -27,6 +27,7 @@
             padding: 10px;
             border-radius: 10px;
             background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .btn {
@@ -37,23 +38,128 @@
             line-height: 100px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .btn:hover {
+            background-color: #6b6b6b;
         }
 
         .btn.clicked {
-            /* 浅绿色 */
             background-color: #70ba70;
-            /* background-color: #cf7070;  */
         }
 
+        .sidebar {
+            width: 200px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            padding: 20px;
+            color: #fff;
+            overflow-y: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: width 0.3s ease;
+            /* 添加过渡效果 */
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            /* 去除默认的外边距 */
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+            position: relative;
+            /* 添加相对定位，用于图标位置 */
+        }
+
+        .sidebar ul li a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+            /* 添加相对定位，用于图标位置 */
+        }
+
+        .sidebar ul a.month::before {
+            content: '>';
+            /* Unicode 箭头符号，表示展开状态 */
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar ul li ul {
+            list-style-type: none;
+            padding-left: 20px;
+            display: none;
+            background-color: #444;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            /* 添加阴影效果 */
+        }
+
+        .sidebar ul li.active ul {
+            display: block;
+        }
+
+        .sidebar ul li.active a.month::before {
+            content: '>';
+            /* Unicode 箭头符号，表示折叠状态 */
+            transform: translateY(-50%) rotate(90deg);
+            /* 旋转箭头 */
+        }
+
+        .sidebar ul li a:hover {
+            color: #ffd700;
+        }
+
+        .sidebar ul li ul li {
+            margin-bottom: 8px;
+            /* 减少子菜单项间距 */
+        }
+
+        .sidebar ul li ul li a {
+            color: #ccc;
+        }
+
+        .sidebar ul li ul li a:hover {
+            color: #ffd700;
+        }
+
+        
         #result {
             margin-top: 20px;
-            font-size: 15px;
+            font-size: 18px;
             text-align: center;
+            color: #333;
         }
     </style>
 </head>
 
 <body>
+    <div class="sidebar">
+        <h2>选择日期:</h2>
+        <ul id="dateList">
+            <!-- 日期链接将由 JavaScript 动态生成 -->
+        </ul>
+    </div>
+
+    <h1>Connections!</h1>
     <div class="container">
         <div id="btn0" class="btn" onclick="toggleButton(this, 0)">0</div>
         <div id="btn1" class="btn" onclick="toggleButton(this, 1)">1</div>
@@ -75,119 +181,7 @@
     <div id="result" style="margin-top: 20px;"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
-    <script>
-        var AES = CryptoJS.AES;
-        async function readJsonFromFile(filename) {
-            try {
-                const response = await fetch(filename);
-                const jsonData = await response.json();
-                return jsonData;
-            } catch (error) {
-                console.error('Error reading JSON from file:', error);
-                return null;
-            }
-        }
-
-        function decryptData(data, keyHex) {
-            const key = CryptoJS.enc.Hex.parse(keyHex);
-            const iv = CryptoJS.enc.Hex.parse(data.slice(0, 32));
-            const ciphertext = CryptoJS.enc.Hex.parse(data.slice(32));
-            console.log(keyHex);
-            console.log(ciphertext.toString());
-            console.log(iv.toString());
-            const decrypted = CryptoJS.AES.decrypt({ ciphertext }, key, {
-                iv: iv,
-                mode: CryptoJS.mode.CBC,
-                padding: CryptoJS.pad.Pkcs7
-            });
-            return decrypted.toString(CryptoJS.enc.Utf8);
-        }
-
-
-        let currentSequence = [];
-        let answer = {}
-        let unusedColors = [
-            "#70ba70", // 绿色
-            "#803080", // 紫色
-            "#afaf00", // 黄色
-            "#cf7070", // 红色
-        ]
-        
-        function lockButton(button) {
-            button.classList.add('clicked');
-            button.onclick = null;
-        }
-
-        function lockCurrentSequence() {
-            let buttons = document.getElementsByClassName('btn');
-            let selectedButtons = [];
-            let color = unusedColors.pop();
-            for (let i = 0; i < buttons.length; i++) {
-                console.log(buttons[i].innerText);
-                console.log(currentSequence);
-                if (currentSequence.includes(buttons[i].innerText)) {
-                    lockButton(buttons[i]);
-                    buttons[i].style.backgroundColor = color;
-                    selectedButtons.push(buttons[i].innerText);
-                }
-            }
-            currentSequence = [];
-        }
-
-        function toggleButton(button, buttonNumber) {
-            button.classList.toggle('clicked');
-            let word = button.innerText;
-            if (button.classList.contains('clicked')) {
-                currentSequence.push(word);
-            } else {
-                currentSequence = currentSequence.filter(item => item !== word);
-            }
-            // 给currentSequence排序
-            currentSequence.sort();
-            console.log(currentSequence);
-            // 将currentSequence转换为字符串，用空格分隔
-            let result = currentSequence.join(' ');
-            let hash = CryptoJS.MD5(result).toString();
-            if (hash in answer) {
-                let ciphertext = answer[hash];
-                let key = CryptoJS.MD5(result + 'salt');
-                console.log(key.toString(), typeof key);
-                ans = decryptData(ciphertext, key.toString());
-                console.log(ans);
-                let paragraph = document.createElement('p');
-                paragraph.textContent = currentSequence.join(', ')+' :   '+ans;
-                document.getElementById('result').appendChild(paragraph);
-                lockCurrentSequence();
-            }
-            if(unusedColors.length == 0){
-                setTimeout(() => {
-                    alert('Congratulations! You have finished the game!');
-                }, 100);
-            }
-        }
-        function init() {
-            let date = new Date();
-            let dateString = date.toISOString().split('T')[0];
-            console.log(dateString);
-            readJsonFromFile('./data/' + dateString + '.json').then(data => {
-                if (data) {
-                    console.log(data);
-                    let words = data.words;
-                    for (let i = 0; i < words.length; i++) {
-                        // 转为utf-8编码
-                        document.getElementById('btn' + i).innerText = words[i];
-                    }
-                    let answers = data.answers;
-                    for (let i = 0; i < answers.length; i++) {
-                        let ans_pair = answers[i]
-                        answer[ans_pair['md5']] = ans_pair['answer'];
-                    }
-                    console.log(answer);
-                }
-            });
-        }
-        init();
-    </script>
+    <script src="./index.js"> </script>
 </body>
 
 </html>
