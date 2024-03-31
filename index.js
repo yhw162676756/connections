@@ -266,8 +266,9 @@ function init() {
     let selectedDate = localStorage.getItem('selectedDate'); // 获取保存的日期信息
     if (!selectedDate) {
         let date = new Date();
-        console.log(date);
-        selectedDate = date.toLocaleDateString.split('T')[0];
+        console.log(date.toLocaleDateString());
+        selectedDate = date.toLocaleDateString().split('T')[0];
+        selectedDate = selectedDate.split('/').join('-');
     }
     loadJsonFileForDate(selectedDate); // 加载保存的日期对应的 JSON 文件
 }
