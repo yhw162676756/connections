@@ -258,6 +258,12 @@ function updateSideBar() { // 动态生成日期链接
 function toggleSidebar() {  // 控制侧边栏的显示与隐藏
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('collapsed');
+    // sidebar收起时sidebar背景变为透明
+    if (sidebar.classList.contains('collapsed')) {
+        sidebar.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    } else {
+        sidebar.style.backgroundColor = '#333';
+    }
 }
 
 function loadJsonFileForDate(date) {
@@ -266,7 +272,6 @@ function loadJsonFileForDate(date) {
 }
 
 function init() {
-    sidebar.classList.toggle('collapsed');
     updateSideBar();
     let selectedDate = sessionStorage.getItem('selectedDate'); // 获取保存的日期信息
     if (!selectedDate) {

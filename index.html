@@ -10,15 +10,15 @@
 </head>
 
 <body>
-    <div class="sidebar" id="sidebar">
-        <button class="sidebar-toggle" onclick="toggleSidebar()" >☰</button>
+    <div class="sidebar collapsed" id="sidebar">
         <h2>选择日期:</h2>
         <ul id="dateList">
             <!-- 日期链接将由 JavaScript 动态生成 -->
         </ul>
+        <button class="sidebar-toggle" onclick="toggleSidebar()" >☰</button>
     </div>
 
-    <h1 id="head">Connections!</h1>
+    <h1 id="head" >Connections!</h1>
     <div class="container">
         <div id="btn0" class="btn" onclick="toggleButton(this, 0)"></div>
         <div id="btn1" class="btn" onclick="toggleButton(this, 1)"></div>

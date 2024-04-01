@@ -25,8 +25,6 @@ body {
     width: min(80%, 440px); /* 最大宽度为 500px */
     max-width: 100%; /* 最大宽度为视口宽度 */
     overflow: auto; /* 内容溢出时出现滚动条 */
-    /* 向右偏移 */
-    margin-left: 50px;
 }
 
 .rule-description {
@@ -42,7 +40,6 @@ body {
     color: #333;
     line-height: 1.5;
     overflow: auto; /* 内容溢出时出现滚动条 */
-    margin-left: 50px;
 }
 
 
@@ -68,6 +65,21 @@ body {
     font-size: 14px;
     color: #666;
 }
+
+.sidebar {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px;
+    color: #fff;
+    overflow-y: auto;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+    transition: width 0.3s ease;
+}
+
 .sidebar-toggle {
     position: absolute;
     top: 10px;
@@ -89,25 +101,8 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.sidebar-toggle.collapsed {
-    background-color: #333; /* 收起时保持和背景色一致 */
-    color: #fff; /* 文字颜色也一致 */
-}
 
 /* 修改侧边栏样式 */
-.sidebar {
-    width: 200px;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #333;
-    padding: 20px;
-    color: #fff;
-    overflow-y: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: width 0.3s ease;
-}
 
 .sidebar.collapsed {
     width: 10px;
@@ -135,63 +130,29 @@ body {
     list-style-type: none;
 }
 
-.sidebar ul li {
-    margin-bottom: 10px;
-}
 
-.sidebar ul li a {
-    color: #fff;
-    text-decoration: none;
-}
 
 .sidebar-toggle::after {
     position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-}
-
-.btn {
-    background-color: #a0a0a0;
-    color: white;
-    font-size: 18px;
-    text-align: center;
-    line-height: 100px;
+    top: 20px; /* 调整按钮位置 */
+    right: 10px;
+    background-color: #fff; /* 按钮背景色 */
+    color: #333; /* 按钮文字颜色 */
+    border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 10px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    z-index: 100; /* 确保按钮在最上层 */
 }
 
 
 
-.btn:hover {
-    background-color: #a0a0a0;
-}
 
-.btn.wrong {
-    background-color: #df4646; /* 红色 */
-    transition: background-color 0 ease; /* 渐变效果 */
+.sidebar-toggle.collapsed {
+    /* 透明 */
+    background-color: transparent;
+    color: #fff; /* 文字颜色也一致 */
 }
-
-.btn.clicked {
-    background-color: #70ba70;
-}
-
-.sidebar {
-    width: 200px;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #333;
-    padding: 20px;
-    color: #fff;
-    overflow-y: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: width 0.3s ease;
-    /* 添加过渡效果 */
-}
-
 .sidebar h2 {
     margin-top: 0;
     font-size: 20px;
@@ -252,10 +213,6 @@ body {
     /* 旋转箭头 */
 }
 
-.sidebar ul li a:hover {
-    color: #ffd700;
-    /* xx: #cf3030 */
-}
 
 .sidebar ul li ul li {
     margin-bottom: 8px;
@@ -266,9 +223,6 @@ body {
     color: #ccc;
 }
 
-.sidebar ul li ul li a:hover {
-    color: #ffd700;
-}
 
 
 #result {
@@ -278,4 +232,31 @@ body {
     color: #333;
     max-width: 100%; /* 最大宽度为视口宽度 */
     overflow: auto; /* 内容溢出时出现滚动条 */
+}
+
+
+
+.btn {
+    background-color: #a0a0a0;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+}
+
+
+.btn:hover {
+    background-color: #a0a0a0;
+}
+
+.btn.wrong {
+    background-color: #df4646; /* 红色 */
+    transition: background-color 0 ease; /* 渐变效果 */
+}
+
+.btn.clicked {
+    background-color: #70ba70;
 }
