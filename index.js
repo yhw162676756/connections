@@ -148,7 +148,7 @@ function toggleButton(button, buttonNumber) { // 选择单词
 async function getFileList() {
     try {
         const response = await fetch('./data/fileList');
-        const fileList = (await response.text()).split('\r\n');
+        const fileList = (await response.text()).split('\n');
         console.log(fileList);
         return fileList.filter(name => name.endsWith('.json'))
     } catch (error) {
