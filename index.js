@@ -63,7 +63,7 @@ let unusedColors = [    // 正确答案的颜色
     "#70ba70",
     "#803080",
     "#afaf00",
-    "#cf7070",
+    "#7070ba",
 ]
 
 function lockButton(button) {
