@@ -1,6 +1,7 @@
 var AES = CryptoJS.AES;
 async function readJsonFile(filename) {
     try {
+        console.log(filename);
         const response = await fetch(filename);
         const jsonData = await response.json();
         return jsonData;
@@ -17,7 +18,6 @@ function processData(data) {
         console.log(data);
         let words = data.words;
         for (let i = 0; i < words.length; i++) {
-            // 转为utf-8编码
             document.getElementById('btn' + i).innerText = words[i];
         }
         let answers = data.answers;
@@ -242,7 +242,8 @@ function updateSideBar() { // 动态生成日期链接
             link.addEventListener('click', function (event) {
                 event.preventDefault();
                 const yearMonthDay = this.getAttribute('data-year-month-day');
-                localStorage.setItem('selectedDate', yearMonthDay);
+                // 将选择的日期保存到 sessionStorage
+                sessionStorage.setItem('selectedDate', yearMonthDay);
                 window.location.reload(); // 刷新页面
             });
         });
@@ -263,13 +264,16 @@ function loadJsonFileForDate(date) {
 function init() {
     sidebar.classList.toggle('collapsed');
     updateSideBar();
-    let selectedDate = localStorage.getItem('selectedDate'); // 获取保存的日期信息
+    let selectedDate = sessionStorage.getItem('selectedDate'); // 获取保存的日期信息
     if (!selectedDate) {
         let date = new Date();
-        console.log(date.toLocaleDateString());
-        selectedDate = date.toLocaleDateString().split('T')[0];
-        selectedDate = selectedDate.split('/').join('-');
+        let year = date.getFullYear();
+        let month = (date.getMonth() + 1).toString().padStart(2, '0'); // 月份从0开始，需要加1，然后保证两位数格式
+        let day = date.getDate().toString().padStart(2, '0'); // 保证两位数格式
+        selectedDate = `${year}-${month}-${day}`;
+        console.log(selectedDate);
     }
+    
     loadJsonFileForDate(selectedDate); // 加载保存的日期对应的 JSON 文件
 }
 
