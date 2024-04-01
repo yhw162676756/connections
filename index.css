@@ -13,8 +13,8 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(4, 100px);
+    grid-template-columns: repeat(4, min(100px,25%));
+    grid-template-rows: repeat(4, min(100px,25%));
     gap: 10px;
     border: 2px solid #ccc;
     padding: 10px;
@@ -22,8 +22,11 @@ body {
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     justify-content: center;
+    width: min(80%, 440px); /* 最大宽度为 500px */
     max-width: 100%; /* 最大宽度为视口宽度 */
     overflow: auto; /* 内容溢出时出现滚动条 */
+    /* 向右偏移 */
+    margin-left: 50px;
 }
 
 .rule-description {
@@ -106,7 +109,7 @@ body {
 }
 
 .sidebar.collapsed {
-    width: 16px; /* 收起时宽度调整为50px */
+    width: 10px;
 }
 
 .sidebar h2,
