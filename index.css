@@ -150,6 +150,7 @@ body {
     right: 0;
     transform: translateY(-50%);
 }
+
 .btn {
     background-color: #a0a0a0;
     color: white;
@@ -164,11 +165,11 @@ body {
 
 
 .btn:hover {
-    background-color: #6b6b6b;
+    background-color: #a0a0a0;
 }
 
 .btn.wrong {
-    background-color: #ff6666; /* 红色 */
+    background-color: #df4646; /* 红色 */
     transition: background-color 0 ease; /* 渐变效果 */
 }
 
