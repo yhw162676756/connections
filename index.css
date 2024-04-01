@@ -42,6 +42,7 @@ body {
     color: #333;
     line-height: 1.5;
     overflow: auto; /* 内容溢出时出现滚动条 */
+    margin-left: 50px;
 }
 
 
