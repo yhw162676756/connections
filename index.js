@@ -145,20 +145,21 @@ function toggleButton(button, buttonNumber) { // 选择单词
     }
 }
 
+async function getFileList() {
+    try {
+        const response = await fetch('./data/fileList');
+        const fileList = (await response.text()).split('\r\n');
+        console.log(fileList);
+        return fileList.filter(name => name.endsWith('.json'))
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
 function updateSideBar() { // 动态生成日期链接
-    document.addEventListener('DOMContentLoaded', function () {
-        // Ajax 请求获取文件名列表
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', './data/', true);
-        xhr.onload = function () {
-            if (xhr.status === 200) {
-                const fileList = xhr.responseText.split('\"').filter(name => name.endsWith('.json'));
-                generateDateLinks(fileList);
-            } else {
-                console.error('Failed to fetch file list');
-            }
-        };
-        xhr.send();
+    getFileList().then(fileList => {
+        generateDateLinks(fileList);
     });
     function generateDateLinks(fileList) {
 
@@ -268,8 +269,8 @@ function init() {
     if (!selectedDate) {
         let date = new Date();
         let year = date.getFullYear();
-        let month = (date.getMonth() + 1).toString().padStart(2, '0'); // 月份从0开始，需要加1，然后保证两位数格式
-        let day = date.getDate().toString().padStart(2, '0'); // 保证两位数格式
+        let month = (date.getMonth() + 1).toString().padStart(2, '0');
+        let day = date.getDate().toString().padStart(2, '0'); 
         selectedDate = `${year}-${month}-${day}`;
         console.log(selectedDate);
     }
