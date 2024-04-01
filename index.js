@@ -149,6 +149,9 @@ async function getFileList() {
     try {
         const response = await fetch('./data/fileList');
         const fileList = (await response.text()).split('\n');
+        for (let i = 0; i < fileList.length; i++) {
+            fileList[i] = fileList[i].trim();
+        }
         console.log(fileList);
         return fileList.filter(name => name.endsWith('.json'))
     } catch (error) {
