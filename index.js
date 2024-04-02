@@ -1,7 +1,6 @@
 var AES = CryptoJS.AES;
 async function readJsonFile(filename) {
     try {
-        console.log(filename);
         const response = await fetch(filename);
         const jsonData = await response.json();
         return jsonData;
@@ -15,7 +14,6 @@ let fileCache = {}; // 缓存数据文件
 
 function processData(data) {
     if (data) {
-        console.log(data);
         let words = data.words;
         for (let i = 0; i < words.length; i++) {
             document.getElementById('btn' + i).innerText = words[i];
@@ -45,9 +43,6 @@ function decryptData(data, keyHex) {
     const key = CryptoJS.enc.Hex.parse(keyHex);
     const iv = CryptoJS.enc.Hex.parse(data.slice(0, 32));
     const ciphertext = CryptoJS.enc.Hex.parse(data.slice(32));
-    console.log(keyHex);
-    console.log(ciphertext.toString());
-    console.log(iv.toString());
     const decrypted = CryptoJS.AES.decrypt({ ciphertext }, key, {
         iv: iv,
         mode: CryptoJS.mode.CBC,
@@ -152,7 +147,6 @@ async function getFileList() {
         for (let i = 0; i < fileList.length; i++) {
             fileList[i] = fileList[i].trim();
         }
-        console.log(fileList);
         return fileList.filter(name => name.endsWith('.json'))
     } catch (error) {
         console.error(error);
@@ -280,7 +274,6 @@ function init() {
         let month = (date.getMonth() + 1).toString().padStart(2, '0');
         let day = date.getDate().toString().padStart(2, '0'); 
         selectedDate = `${year}-${month}-${day}`;
-        console.log(selectedDate);
     }
     
     loadJsonFileForDate(selectedDate); // 加载保存的日期对应的 JSON 文件
