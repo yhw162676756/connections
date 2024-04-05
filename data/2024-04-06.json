@@ -1,39 +1,39 @@
 {
     "words": [
-        "如来",
-        "华氏度",
-        "空调",
-        "牛子",
+        "哭泣",
         "真相",
-        "强",
-        "挂科",
-        "鱼",
-        "跑圈",
-        "文物",
         "说谎",
         "敬意",
-        "哭泣",
+        "如来",
+        "跑圈",
+        "鱼",
+        "调休",
         "白学",
+        "牛子",
         "抛弃",
-        "调休"
+        "华氏度",
+        "反问",
+        "挂科",
+        "强",
+        "文物"
     ],
     "date": "2024-04-07",
     "answers": [
         {
             "md5": "bad13b23a3f129c84a89baf77e60a470",
-            "answer": "512ea35b4550be8ca9d855da495c404e24828d79f134a8e2ddddc79e5562d5f9"
+            "answer": "28d3020aec8b767cdb25a13db3a2005d7b6316520a4dae88b46a68b745b6a6a6"
         },
         {
-            "md5": "1d06e1aa5660b237978cc707cddf0a3c",
-            "answer": "eb36f1c57dc2e66737b54a865005207e4e5771289712bf7b0d532597c7b76b82"
+            "md5": "5e0364e8770b456e9bd4c410dd57c8f6",
+            "answer": "a93d8c2c3b30c429b3b9d14eb4ebf9b7f959e93961eea632ce2b15baa4c82c56"
         },
         {
             "md5": "8dc63c1052bcff86b0b88c9550cf7ca0",
-            "answer": "f5b3b0498b024a11f920cd1793e494634574d6ae498d56d5e9f15bb8c4806a1f"
+            "answer": "1081c1530c398e8bf04bbf77b8f08f4d6487611d795ebe3f19c1142dbdc5e047"
         },
         {
             "md5": "e06e26844797e2d90b91ca775ca3fa68",
-            "answer": "2c843dbe74ce97da5c010f7bfd9f14062725b1babb77e9888245dcc1c9806d008e5175aafde70c740e92617f28068bb7"
+            "answer": "ed7eb6576b1d0f1367ed67e8ebe783417a39bea74e21a1e6e7f6b61281ee72c6f377d570ac76f4b9dd16eafa8adf51d0"
         }
     ]
 }
