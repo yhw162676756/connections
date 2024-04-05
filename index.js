@@ -70,7 +70,7 @@ function lockCurrentSequence() {
     let buttons = document.getElementsByClassName('btn');
     let color = unusedColors.pop();
     for (let i = 0; i < buttons.length; i++) {
-        if (currentSequence.includes(buttons[i].innerText)) {
+        if (currentSequence.includes(buttons[i].innerText) && buttons[i].classList.contains('clicked')) {
             lockButton(buttons[i]);
             buttons[i].style.backgroundColor = color;
         }
