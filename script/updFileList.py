@@ -18,7 +18,7 @@ with open(fileListPath, 'a') as f:
         f.write(file+'\n')
 print('File list updated.')
 
-# url = 'https://connects-update-zwpgxvhxeg.cn-hangzhou.fcapp.run'
+url = 'https://connects-update-zwpgxvhxeg.cn-hangzhou.fcapp.run'
 # 向url post文件
 # for file in addedfileSet:
 #     with open(path+file, 'rb') as f:
@@ -27,7 +27,8 @@ print('File list updated.')
 #         print(res.text)
 # with open(fileListPath, 'rb') as f:
 #     data = f.read()
+#     print(data)
 #     # res = requests.post(url, data=data)
-#     res = requests.post(url, data=data, headers={'Content-Type': 'application/octet-stream'})
+#     res = requests.post(url, data=data, headers={'Content-Type': 'text/plain;charset=UTF-8'})
 #     print(res.text)
 # print('All files uploaded.')

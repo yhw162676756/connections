@@ -1,0 +1,39 @@
+{
+    "words": [
+        "感动",
+        "卡",
+        "基地",
+        "面包",
+        "老乡",
+        "铺盖",
+        "天空",
+        "水晶",
+        "欢喜",
+        "老爷",
+        "海岸",
+        "海底",
+        "汉堡",
+        "垃圾",
+        "冰雪",
+        "必胜"
+    ],
+    "date": "2024-04-17",
+    "answers": [
+        {
+            "md5": "da04f16bf947a6fef24640a612e3e980",
+            "answer": "b8e3943a831f041a2813a3d4dd23028644e1dca25cc8c8c70e1a1f0892b2c11a"
+        },
+        {
+            "md5": "b38591388d64ba459ef49581e3907708",
+            "answer": "c1dc28ef702602999c2838b05d703d423c472319b951042711446fd9a596c08c7e545edfefab8567409b78486eb9d85358ad54e331faa0997020ec1283a761fd99cb70a528bf44ef8124e128f6c2fc199ffe567f2fb47172ca3270d6dba0936ab9b45decef81f7d2f43350d2091b8d45"
+        },
+        {
+            "md5": "37655607f1cad71404e4b1d88deaac69",
+            "answer": "5f68ee1a985e59766ef8b5cb999041f7222eeee0567baf12bb2c0bcba07ddfe9c5e619264b1af84c4aab73ad03aa5eaa"
+        },
+        {
+            "md5": "cb277ea413c9623e882d782ebbb8b7bd",
+            "answer": "7272fe4f9bb73062eb85f43072193b8b22f8834790ea843937d1acb0b4159bfed5e8b207b31bd3910812819f14f229169795759c626101d0567afd48025b7b68ddf55e3c4915eeade9e1a9d25bc8751bac66ce20f37ad02df666cd70d0364b2d3df8c90e8b6479e678dd5205d56f88e6"
+        }
+    ]
+}
