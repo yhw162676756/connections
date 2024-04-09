@@ -7,14 +7,14 @@ if os.path.exists(fileListPath):
     with open(fileListPath, 'r') as f:
         for line in f:
             oldFileSet.add(line.strip())
-newfileSet = set(os.listdir(path))
-newfileSet.remove('fileList')
-addedfileSet = newfileSet - oldFileSet
-if not addedfileSet:
+newfileList = os.listdir(path)
+newfileList.remove('fileList')
+newfileList.sort()
+if not newfileList:
     print('No new file added.')
     exit()
-with open(fileListPath, 'a') as f:
-    for file in addedfileSet:
+with open(fileListPath, 'w') as f:
+    for file in newfileList:
         f.write(file+'\n')
 print('File list updated.')
 
