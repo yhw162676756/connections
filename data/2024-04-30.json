@@ -1,0 +1,39 @@
+{
+    "words": [
+        "豆腐",
+        "雪花",
+        "崩坏",
+        "计划",
+        "瓜",
+        "反馈",
+        "闪现",
+        "基础",
+        "破军",
+        "出血",
+        "瀑布",
+        "谦逊",
+        "恋爱",
+        "蛇",
+        "风车",
+        "地球"
+    ],
+    "date": "2024-04-30",
+    "answers": [
+        {
+            "md5": "e440c4c82858be988efd165aae556fe3",
+            "answer": "14991384bc89c7ca9b3f98634748c608c1a42b37d2c5cccf380b499d0f2111ce9d1ba1e7edde87092e0b006e84a6a2b0"
+        },
+        {
+            "md5": "97832fe88d31923691d274356ba13398",
+            "answer": "176a39810802f954eaffb08df96b9279b3eec2ffe26e3ea1bcf4b47d48301f15"
+        },
+        {
+            "md5": "d8e1eafcbedc73c9fd000087f152b86a",
+            "answer": "208982eb52df38ecf964d7fb361378dc76341e6d4164906b23a7cb26989764e7"
+        },
+        {
+            "md5": "fece598ddb47269d9d367c33272afcf6",
+            "answer": "b8c550bb5f4104fd356ce9ab4865b4719cc1bbd8180b2998bc98e2eadb6a0c7ad41b61e4857c259cd3cf42cbe546fdd7"
+        }
+    ]
+}
