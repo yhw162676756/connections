@@ -1,0 +1,39 @@
+{
+    "words": [
+        "弹跳",
+        "头脑",
+        "高兴",
+        "玉狮子",
+        "起飞",
+        "白兔",
+        "马虎",
+        "浮云",
+        "漂亮",
+        "怠惰",
+        "吉利",
+        "开水",
+        "塔尖",
+        "心意",
+        "白鹤",
+        "边际"
+    ],
+    "date": "2024-04-27",
+    "answers": [
+        {
+            "md5": "1714247fa71b13379c4284254e07cb91",
+            "answer": "bf7e08d4e7145341fc644e11393d219ddce7e6051442303f6fbcaea523fc8f3856ed906cdd2483bf73e692c151a017980604861854e79ae0e58c5df89aa8c89c5d16ab1bdfdee0dcf3ce7b05da8300cb3c6ae3af6f7df1344c2c2a616da31c4bf20e6c8ec3ef10edc336746beedf37db"
+        },
+        {
+            "md5": "c1f5c11f811079ec1580af1828f37048",
+            "answer": "d1dcfcf84ab78e12e8bc37f3fdf839af20c522efcf3911c5e3e88b6fb045be71cb0da726ec7037df87419b8eede1f11dff9618d2a398fb883217a8331db05159"
+        },
+        {
+            "md5": "2343baff3955ba8d575f1ab2223bff63",
+            "answer": "3f04a4ad8afbfe3fbf21bd8384c2af6800d78acdc5b6656f7a33b9332ea940255bd089e1c79aa2c5c10b639ef3e9e7507c3365a708e35c874eda901393ec1da0"
+        },
+        {
+            "md5": "7f56cf519c23b32f7e46fdbf99c5ddb4",
+            "answer": "c60770488f88ccf2bf2d03e8d5626250887c41df3ee0c42dae8bf9ad96dfad71"
+        }
+    ]
+}

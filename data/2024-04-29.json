@@ -1,0 +1,39 @@
+{
+    "words": [
+        "容颜",
+        "贝壳",
+        "不古",
+        "伴侣",
+        "马陆",
+        "丝绸",
+        "月",
+        "蜘蛛",
+        "大米",
+        "铁",
+        "墨子",
+        "羚羊",
+        "绿色",
+        "金",
+        "礼帽",
+        "豹子"
+    ],
+    "date": "2024-04-29",
+    "answers": [
+        {
+            "md5": "abdd729a43e6aa641084c5c880388477",
+            "answer": "ad2093cc4af58b35eb8dd458d41496df4d5a734a0a0947fd8bd9c1eb21b3624655c33758e4835e5b3fbf1f6e7fb8fad6"
+        },
+        {
+            "md5": "d56d86ac0456cd88934285a21593b18c",
+            "answer": "05e399c8f67ea3b50f1a9a15f53d034e22753013fa1674765908370dd87204ad75afd9abf2d8fa2ffa23d43d0f54f17aa804106c2328bcf9b643a6aa0ce51406"
+        },
+        {
+            "md5": "ecca10e4d615c98f662dcba18cc85aa1",
+            "answer": "30ca92a7b574758f901a3cb4e2aca351776a2b27d9d905c908f87fca61e22bf0f68b135ea7b150c058f4e43c2677d458"
+        },
+        {
+            "md5": "ef907f2e0cc907c97a07fb7737c74364",
+            "answer": "80e92766762a4633bb9cf95683a58a3a015abb43fb6c78742722c414fa8b98a810c52d660a8205e32b9f0d824cf47da347d6f4d61d8ee6eb36ea3b44c671ea35548f21701de8837fe25d1a2a1a30c370"
+        }
+    ]
+}

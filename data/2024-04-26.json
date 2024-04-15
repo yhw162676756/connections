@@ -1,0 +1,39 @@
+{
+    "words": [
+        "蟹爪",
+        "不禁",
+        "红点",
+        "面具",
+        "鸡冠",
+        "四叶草",
+        "水花",
+        "大招",
+        "火",
+        "长寿",
+        "浴巾",
+        "太极",
+        "灵活",
+        "轮船",
+        "米",
+        "枫叶"
+    ],
+    "date": "2024-04-26",
+    "answers": [
+        {
+            "md5": "f7d1cc774177159db7a932715e13ecab",
+            "answer": "858f6a47d4b225dc8ec18446e758bb1ec5eb55327fdd07be285e3f617f6ea81d"
+        },
+        {
+            "md5": "512f3633af4d7b4b5e33ec220f7d5739",
+            "answer": "8829e180ae50dc460718bc35db466d5848efdef1affe97738ac407c919e18a1c3edd3f5c047bbcc09d6f96e45043ac05e725952e70e001996ddc250f5c8fbf876c0cec502288734ad22b196abc5a1fe7"
+        },
+        {
+            "md5": "10b2e99c53246e195855d62e9693a2ea",
+            "answer": "09e7b8f7762e68a87a09dfc3e0eaeb5296d24fd70c7f30d453c3e255a1c5c17d"
+        },
+        {
+            "md5": "1d814b84fd891ecaf527d2750af57ea0",
+            "answer": "7d5ffdeda5879712dea6587ff1eeca19f7ce935a9b740d962c24d9541b3541de89a1e43f782c48a9607c0de992d3210dcedf4df6e39dbb96e4571502e5f32147d763e8df21fa43469e02e1312ae47bb4"
+        }
+    ]
+}

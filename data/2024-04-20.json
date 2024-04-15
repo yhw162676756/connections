@@ -1,0 +1,39 @@
+{
+    "words": [
+        "警戒",
+        "眼",
+        "咸鱼",
+        "喜马拉雅",
+        "黄牛",
+        "马蜂",
+        "妈妈",
+        "西瓜",
+        "节气",
+        "马上",
+        "声",
+        "抛物",
+        "火山",
+        "猪",
+        "容易",
+        "狼"
+    ],
+    "date": "2024-04-20",
+    "answers": [
+        {
+            "md5": "5744e18ba1e27107b6b6fc30ad801033",
+            "answer": "ebbac41d6b546cbfb8d5d6f6ba24727fd294b46939fcf63079185d25843956ec"
+        },
+        {
+            "md5": "65f4f63a3260c8216f18fa35ecdf6a2e",
+            "answer": "63087f0aa827b54db4e77f76a39c2030c42855bcb09185479216749f626799fe"
+        },
+        {
+            "md5": "c290ad1664cb04ae2edba1be1b4382fc",
+            "answer": "804d1de90f556feab3b759c19ca0ef6ca160b4ae365f7ebcc5b796800efb6b1ea51213ed4154832ac759848cc5e60ffa006c98bb2c45a3ef9f57ed6893706a49"
+        },
+        {
+            "md5": "52116477d256781f07ff06f7a719335b",
+            "answer": "5be9e15ba66af8e77619ede88a830b57d7e929ff5b388e51d337b18606bf8541e8397c56278207bbdf2550f2affdad06"
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "words": [
+        "僧侣",
+        "没奖",
+        "山涧",
+        "鲁棒",
+        "发话",
+        "云玩家",
+        "天象",
+        "加粗",
+        "世界末日",
+        "龟兔赛跑",
+        "翡翠原石",
+        "选择",
+        "犹豫",
+        "吉兆",
+        "蛋糕",
+        "泡澡"
+    ],
+    "date": "2024-04-23",
+    "answers": [
+        {
+            "md5": "83960dcfc2f20c626be54db745716fd9",
+            "answer": "c2bf0ebb6561183d16413500bb9950efa13c2daeefd47cb842581147aff7045b068070ab5a9d9147bd6f8f022e6fa0919ad6813c3c47bf694710bbac62f217b9"
+        },
+        {
+            "md5": "8e11ebd586d144d0e5a9ae7f8e0f7516",
+            "answer": "fa1b149d2b5f60b18d12443769ef2436617e283ed2e847c990f15c07abde420c1ff4d95a77c386e2eaa21aa54a46ba7e847016290bf5a61859a7b9614a86252c"
+        },
+        {
+            "md5": "93e3f72b5f0f9e1ba2a47b3671895c5f",
+            "answer": "7d14d371c4f9f71dbf700a46520253f7f92d4d0c4e5e8354825ad8de54dfaa3a0ffd58f0e31f24c3bc40e20b0fd578997f50261db69eedaf4f9a258336bf99c1d911380dbfabbc3edf90397bf820ee01c11bd006d8710c4d1926d65c75a80ef48331df8cc7afab598e49f6b4e48014a8"
+        },
+        {
+            "md5": "f3641b9a6aaff242228724ca0cd4846c",
+            "answer": "ca633accdbadc92d3ee51c92398b9c3464cc337827c2ffb15b7408e73076dc3b88e227754cc5e7b1d204a5cf9764088aa91e0e9b95ca3233312227c110974dd567733401aa5e5b022c6b196be62b57202681ba1f28d6e32a148e8a896b715ff3"
+        }
+    ]
+}

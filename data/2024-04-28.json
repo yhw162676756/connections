@@ -1,0 +1,39 @@
+{
+    "words": [
+        "宇宙",
+        "清凉寺(南京)",
+        "团结",
+        "浓硝酸",
+        "坎肩",
+        "电解质",
+        "化脓",
+        "纤维",
+        "辩论赛",
+        "唯一",
+        "港口",
+        "糖",
+        "立刻",
+        "大学",
+        "粗心",
+        "水"
+    ],
+    "date": "2024-04-28",
+    "answers": [
+        {
+            "md5": "afc450c36e8809cc0753443b72bb3d9c",
+            "answer": "e9b706f6392738c3927ec16423d197d191e9d63391ca8fced5305aea007ea401"
+        },
+        {
+            "md5": "694c201b7b80d3709346ef6773affbbe",
+            "answer": "f88a8f037b982d3f94c23013a73f976d5127fbe3594ebbfb399a827202cedecf1b61d1ddf406e55e12f769a9725cfd9f0292df7b476c7254e705ab87bc9d885c1f09b9f8c3cb771f52cfc84adde8ad03"
+        },
+        {
+            "md5": "951cbc2f4d3041f7315523a9aa03bab6",
+            "answer": "0687f2bd8c268db4380c2f61b389943eacdfc993b1898e62a7998e42ce5b9c64e0b61e68dffcfe123e2da492b74a6a9e"
+        },
+        {
+            "md5": "9db8ea4f6a30ce3d2002b7dd50da3ba7",
+            "answer": "413215e5ea945c7e188a6f83873a66aac8f572017de0593e9379a05ca73d81474297c2672bbe7b46442e1b67f924f53a451527097440d3c757c3ec27179f80c73db8cd4b9e339de69948ac0b011a6367"
+        }
+    ]
+}
