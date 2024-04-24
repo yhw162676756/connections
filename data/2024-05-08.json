@@ -1,0 +1,39 @@
+{
+    "words": [
+        "迎客",
+        "不才",
+        "武当",
+        "九宫",
+        "蒲团",
+        "冷清",
+        "薄刀",
+        "仿宋",
+        "老衲",
+        "探海",
+        "倒挂",
+        "神农",
+        "状元",
+        "荒唐",
+        "奴婢",
+        "小生"
+    ],
+    "date": "2024-05-08",
+    "answers": [
+        {
+            "md5": "40f24736e1f5f913acb5fd07a5c4081a",
+            "answer": "1ab64c6e995a208916a7b0f2671e2ca203c68507f0fdd43defc9528589cf642d87fe70b761da8864985fac3546327d43248d20e56ea9667528ccdbabd29bc53344abd1d6064032d351647fc18bc1696d"
+        },
+        {
+            "md5": "f1cc55f35356ca47092950cac94b40f8",
+            "answer": "1fcc593eb2c3a347fea5ed51ce2f0a9464452777b4d948155694919dc55f42094eae24ad2d48a1cc096f6a69ac53e33b695a57f664bd641c4ca0499dfd0f81b0"
+        },
+        {
+            "md5": "f0a0b034a8d830f0b9c5efcfa9476dee",
+            "answer": "aef2b335deb890ef241be90e6d229b0d529b8c6b94c88112aa5e46f1433557aa291b7317a31cc915f9a465eeb8653d77809e19ec808da4b6ae42b1a8d8f04c24"
+        },
+        {
+            "md5": "8e1bd80f9d567a4044eebe1aae6a22d5",
+            "answer": "9047ae9e38cafd885973e08fe7bed48b4d482adca30e86c70b54e2953efeb61c14ed373b7e4d38648af8efd03e370ee3"
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "words": [
+        "伊",
+        "单测",
+        "拉客",
+        "皆兵",
+        "大树",
+        "三管",
+        "临前",
+        "犯上",
+        "了得",
+        "行者",
+        "大厅",
+        "列阵",
+        "呆滞",
+        "屏",
+        "质朴",
+        "小点"
+    ],
+    "date": "2024-05-02",
+    "answers": [
+        {
+            "md5": "8562d063277fe3501a0c01c650e65bd7",
+            "answer": "1b11dc1127144fbd8f1b4bbe577d3704b92ad5486b6ee75769e567139bec5dfab01eb7afe6604957101d717e451886d7"
+        },
+        {
+            "md5": "e9af7eb1bfa581a04eae11e23c612ffa",
+            "answer": "6c7db0032582498df663ffacf3b46b0868ce68f9121d6b92619c0d909b1bdbe6abf734c91780ce5b6491b10d4dbb01a8"
+        },
+        {
+            "md5": "697e504b8cc554e6dc179394fad4f4e4",
+            "answer": "d965ddcb792dcf9c44f438a9aef193d86bb27a34742275d0882acfdf539d814f35c4b746b7a2b5820d70105d7f7ea0fd24bd4b889f8e0c752b75a59503901a07"
+        },
+        {
+            "md5": "c6ed08b0fc29e26708ae396ec2fc4b9a",
+            "answer": "eebb7a88f93c8870c077ea833b52a5ba3a428bf535baf52a9e7e52a2e4b397f2"
+        }
+    ]
+}

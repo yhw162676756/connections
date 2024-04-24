@@ -1,0 +1,39 @@
+{
+    "words": [
+        "蟹爪",
+        "文字",
+        "下回",
+        "田地",
+        "隅方",
+        "二月",
+        "光阴",
+        "形象",
+        "太子",
+        "君子",
+        "诺言",
+        "开水",
+        "沉默",
+        "花木",
+        "成器",
+        "声音"
+    ],
+    "date": "2024-05-04",
+    "answers": [
+        {
+            "md5": "4cea09d4303657375303553ddfbc3121",
+            "answer": "2e1390fd44dc31945d1b45eb98d55c5c50913da88cfb1afb3143ad58158656cdc2df5ebe8e2340e9bbef42f4bb7dcd51ebe0b90d68c42271da489159ba183614c861253c00c067f44d07efc21e055689"
+        },
+        {
+            "md5": "04b28f7f1021c2240c341160667d55a6",
+            "answer": "d3055295aa1cea9654dbe02b27ef2fdeefc6021f804efb6b0bdc25458472a27c9a896fc0c6f05216c7a8d814c2c8ce4d5ecf2fda1cbccf9fba6dffc3de409c91a9d6496cd24ac0219a13ad77c4de3c2396d0965eced4342caacac384b6a68d52"
+        },
+        {
+            "md5": "32f6c81af40aa7489b6ef1500116a8b9",
+            "answer": "4b80efb33cbba4924792c985817c4d301e226b9dc5ef3e499278f8c852a0ab1d"
+        },
+        {
+            "md5": "97e6e2884e9c61accfb7168e2a8ec665",
+            "answer": "3f22123b24494cd36f179427c283f4c6e8665eff66c22b5092e6aaf2812f29df83cad5197107ed2ae63391499e7b980d"
+        }
+    ]
+}
