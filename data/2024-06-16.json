@@ -1,0 +1,39 @@
+{
+    "words": [
+        "樱桃",
+        "试卷",
+        "格外",
+        "干冰",
+        "人儿",
+        "荷兰",
+        "生辰",
+        "线下",
+        "呐喊",
+        "反面",
+        "偶作",
+        "茶梅",
+        "军车",
+        "杨柳",
+        "一角",
+        "安娜"
+    ],
+    "date": "2024-06-16",
+    "answers": [
+        {
+            "md5": "372d85c4c703dd5de6366cdc0158e01c",
+            "answer": "0659bb616d4c64193432a8d0239781e9aefa0a73015f81ba5fa429528239b84eb22cee4b2f617d539c3abb655206f6af3130f7a6d5fd90c42dec6166b8b3b56d"
+        },
+        {
+            "md5": "89614a0f30817a42dc392e2784bcb695",
+            "answer": "e24a0fa2e2833ccd604628e75508d1ca2aa9c22d66c5cf3847510474c9fa5c05b86070cf13773dc10fbb1cb09e4968b6374adb3c20e57d4e30249dd4b4e87afb"
+        },
+        {
+            "md5": "8f9da4bd78946a502811d6e35633679b",
+            "answer": "4f22b3808abf6a2fb813029df5488e4827d5675f74d193c7b4b65d724015d624e39f54471613b57ed82b26d5a209eb4f"
+        },
+        {
+            "md5": "0caaa203eedad1a12081218e96662571",
+            "answer": "fbfba5ec2e797688f48efac6c2741c8b9f9020bd9da90fa45072b76973a8f916bdc2cfe2da24184afe1436fff2128b73611f476862d4079412a3070af5f55b2d2b70c4b3966a7d1c30256caf52c038cdd3aa0e6ab9308a4eb60a46412c6c1647"
+        }
+    ]
+}

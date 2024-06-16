@@ -1,0 +1,39 @@
+{
+    "words": [
+        "炮车",
+        "硬币",
+        "士兵",
+        "衣摆",
+        "相马",
+        "黑板",
+        "选票",
+        "将帅",
+        "邮件",
+        "武陵",
+        "时期",
+        "手球",
+        "意见",
+        "酒吧",
+        "日光",
+        "蜜月"
+    ],
+    "date": "2024-06-17",
+    "answers": [
+        {
+            "md5": "70e90c2e81824c765d5a134ef6d0c412",
+            "answer": "6b496d703180649d5e75762c92a6595abcf3ae317bc2ed2140db867650b4203e01bf941a96b1a92620543afc939dfea5032022b67c86f368cf2a043926971516"
+        },
+        {
+            "md5": "35a782e30fc7bcbcf7c67c349468da28",
+            "answer": "33c312a3526048e6ff1da79dca58d6701eef754c98be4485797bd6bf2be88d61b0dbeda9d9efd9aa6cc22f701513536c9a8e67f3894e52775e8aa0c2823b7be5"
+        },
+        {
+            "md5": "8f079c6c5cdf282d5aaae93f656fd533",
+            "answer": "a9de6cc238bfe5d47582b959665264a850cffa9d772b624f0d436d4ab17a4353091edf96baaa01d79ef9b13582bfa3bf5e31cc1e43f64c720ca2328e1f56b9aa"
+        },
+        {
+            "md5": "7e94a898cea7adb9d74b81008205ab14",
+            "answer": "42109086878aeccad141b0744174e966bb98668d10c7032670dca9097e321833ca5aeb74f2d77ded723062e4fd6dee4237b1ac6ba9cca06877d7c73e543d478c057a65bc7b9b0e58d6280b68daee06e2"
+        }
+    ]
+}

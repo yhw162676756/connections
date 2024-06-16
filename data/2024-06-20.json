@@ -1,0 +1,39 @@
+{
+    "words": [
+        "地球",
+        "毒蛇",
+        "马蹄",
+        "水井",
+        "毛笔",
+        "正经",
+        "大学",
+        "雨点",
+        "好书",
+        "奶牛",
+        "射击",
+        "通风",
+        "蜜蜂",
+        "日记",
+        "组词",
+        "浇灌"
+    ],
+    "date": "2024-06-20",
+    "answers": [
+        {
+            "md5": "47f9da6223dd3ea12fcc83d494d3bc33",
+            "answer": "cd0a4d67f59b4734422ea98d825b1af8968911b2afacff71a755ca21a08f2a80"
+        },
+        {
+            "md5": "e9acd49013ecbdb0c3e6a654a86ea799",
+            "answer": "16eb756479d214522dd1e1acc0f90f969668e70cadcdda3b83eedededc5bb033bb44e68aad1461f3efb8545b5de0bb06"
+        },
+        {
+            "md5": "4556841092ed2518a82edd1c1e205152",
+            "answer": "6e6532eda741d6d13f0136acd527d39b7ee37790ca6a94f97df0df7884916d62"
+        },
+        {
+            "md5": "16ce0ae8c4c478d72a0836b56c9965a3",
+            "answer": "1067aba42e033caa29d169abdd44945eaf8054316b22cd484a65bff1d3a42b7ec3495f909a0024b6ca4ffcf4d492a6f6c308b689972272479fb723534f5a7145"
+        }
+    ]
+}
