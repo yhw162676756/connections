@@ -1,0 +1,39 @@
+{
+    "words": [
+        "明了",
+        "一半",
+        "向量",
+        "吕方",
+        "气体",
+        "出山",
+        "点滴",
+        "睡醒",
+        "并列",
+        "实力",
+        "可人",
+        "五十",
+        "沉淀",
+        "数轴",
+        "带路",
+        "年度"
+    ],
+    "date": "2024-07-02",
+    "answers": [
+        {
+            "md5": "9cb7e568f1a58c5c5bbea250c39f40fa",
+            "answer": "ef568b62ead4a1958f3e18fd111076ebd569f0db92767370e66abd6efdd856d6"
+        },
+        {
+            "md5": "ffe8d8fb98f9970a60fa94a3c23a9d9f",
+            "answer": "c7425c8b602569fa08a054f85a041fc50230772416cf9ed3a29808f26f0f25949509edd544a12d1b9b2bcb7177cbacb49938074cd4eaf19d7dce03e4a15b99a19ae348b7cda90b9212cc868e83564582f467388a24aa94f27c1fb8ae90060d40e76f98f1bcf662b132b96e4e8482f90d135737ba34ebf784da56474407f320e6"
+        },
+        {
+            "md5": "d994e0ae906ad54cbcb81c4104dfff0b",
+            "answer": "b786f4bb11907963e62d648f3f597db1cf59c57ab9b2680adf1eb12ee724d485"
+        },
+        {
+            "md5": "7a4b5a3183ae7cd14d76aa4903ed56bb",
+            "answer": "1b91b7aca52b6f08be6bd2d62a875f777909b8ebe6b7656174576871295bb3b1282a681b27edcb3d7cc97dde4ab75140"
+        }
+    ]
+}
