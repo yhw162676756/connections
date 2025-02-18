@@ -1,39 +1,39 @@
 {
     "words": [
-        "年度",
         "并列",
-        "一半",
-        "沉淀",
-        "道头",
         "可人",
-        "实力",
-        "点滴",
-        "吕方",
-        "向量",
-        "五十",
-        "睡醒",
-        "带路",
         "数轴",
-        "气体",
-        "出山"
+        "明了",
+        "带路",
+        "实力",
+        "吕方",
+        "出山",
+        "五十",
+        "一半",
+        "点滴",
+        "年度",
+        "向量",
+        "沉淀",
+        "睡醒",
+        "气体"
     ],
-    "date": "2024-11-01",
+    "date": "2025-02-18",
     "answers": [
         {
-            "md5": "9cb7e568f1a58c5c5bbea250c39f40fa",
-            "answer": "38b687fc3b09bcc164c1ac866da82306369c62cc8fde4ca6267f787a27fe8cc1"
-        },
-        {
-            "md5": "ffe8d8fb98f9970a60fa94a3c23a9d9f",
-            "answer": "15b18b0ceced12b93c6b609c3981808274ec87501a64496ac4fc753927196cc9d8f59361328b00673f8e019cc080a1e68b737463023902c774d7cd67fcc9b2a2bbbaf0015083e94be800134a94dbee3233c759b79302de067bd2f62684ca590b9c68be548bd347081efc470d2943b973224942556ee3325bc8636e907ea972b9"
-        },
-        {
-            "md5": "7beeca61c233947903e6879cc451a375",
-            "answer": "270e28a1f0441465b6f019c58c5257e42b12591c13a16b551d6f18c4546362c5"
+            "md5": "d994e0ae906ad54cbcb81c4104dfff0b",
+            "answer": "3af1737053ed03de649165a580143c471f7b007a78b4599b51d5a8bfdf83453b"
         },
         {
             "md5": "7a4b5a3183ae7cd14d76aa4903ed56bb",
-            "answer": "d6c8dc7ef328f1b770a566e0f45dcd52e92e799539b1a520ab9ed01298f94d5309cd0006964fbedb61caaf6a1908ffda"
+            "answer": "fddfbc917ee0807e12178b55cb1ba81e7066bc592ca7858ec34f95b8a305dc32805ddf5a56aa8cba7e866a6c5b5b81c8"
+        },
+        {
+            "md5": "9cb7e568f1a58c5c5bbea250c39f40fa",
+            "answer": "f0aaeab353a901be27b2f3040918a9905183136e13609acf8d3341aeb00de865"
+        },
+        {
+            "md5": "ffe8d8fb98f9970a60fa94a3c23a9d9f",
+            "answer": "4ac4411b8dee3ea2370133d9f654ce3b2793f0d399bdcdccec9956d4716439590bf6e2f31b319144c429897ac9e0e60191eaf7feddf92a7e85d281e34fbb16fe62464fd59b60ecb3a4669ea8de534373d22976081757793e7cc12b945a9f39c837e8cc8beefcefd4e4849714d2ef4e0f098d214d1de269cf57f63456fddf9d0d"
         }
     ]
 }
